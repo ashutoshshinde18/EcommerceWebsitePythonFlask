@@ -1,0 +1,102 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<h3 class="text-center fs-5 bg-primary mt-1 text-light py-2">Filter your products based on ID,Name,Brand,Price,Wired/Wiredless ,Size,Color,Customer Ratings,Category</h3>
+
+<div class="container bg-info pb-2" >
+
+<div class="container col-3 " >
+<form action="/showelectronicsproductbyid" enctype="multipart/form-data" method="POST">
+    <div class="mb-3 px-1 ">
+      <label for="eleId" class="form-label text-dark">Show By ID</label>
+      <input type="number" class="form-control" name="eleId" id="eleId">
+    </div>
+    <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+  </form>
+</div>
+
+
+
+  <div class="container col-3  mt-1" >
+  <form action="/showelectronicsproductbyname" enctype="multipart/form-data"  method="POST">
+        <div class="mb-3 px-1">
+          <label for="eleName" class="form-label text-dark">Show By Name</label>
+          <input type="text" class="form-control" name="eleName" id="eleName" >
+        </div>
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3  mt-1" >
+  <form action="/showelectronicsproductbybrand" enctype="multipart/form-data"  method="POST">
+        <div class="mb-3 px-1">
+          <label for="eleBrand" class="form-label text-dark">Show By Brand</label>
+          <input type="text" class="form-control" name="eleBrand" id="eleBrand" >
+        </div>
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3 mt-1" >
+  <form action="/showelectronicsproductbyprice" enctype="multipart/form-data" method="POST">
+        <div class="mb-3 px-1">
+          <label for="elePrice" class="form-label text-dark ">Show By Price</label>
+          <input type="number" class="form-control" name="elePrice" id="elePrice">
+        </div>  
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3 mt-1" >
+    <form action="/showelectronicsproductbywiredwireless" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="eleWiredWireless" class="form-label text-dark ">Show By Wired/Wireless </label>
+            <input type="text" class="form-control" name="eleWiredWireless" id="eleWiredWireless">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  <div class="container col-3 mt-1" >
+    <form action="/showelectronicsproductbysize" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="eleSize" class="form-label text-dark ">Show By Size</label>
+            <input type="text" class="form-control" name="eleSize" id="eleSize">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  <div class="container col-3 mt-1" >
+    <form action="/showelectronicsproductbycolor" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="eleColor" class="form-label text-dark ">Show By Color</label>
+            <input type="text" class="form-control" name="eleColor" id="eleColor">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  
+  <div class="container col-3 mt-1" >
+    <form action="/showelectronicsproductbycustomerratings" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="eleCustomerRatings" class="form-label text-dark ">Show By Customer Ratings</label>
+            <input type="number" step="any" class="form-control" name="eleCustomerRatings" id="eleCustomerRatings">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+<div class="container col-3 mt-1" >
+    <form action="/showelectronicsproductbycategory" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="eleCategory" class="form-label text-dark">Show By Category</label>
+            <input type="text" class="form-control" name="eleCategory" id="eleCategory" >
+          </div>
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,74 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="container mt-2 bg-info pb-2">
+  <div class="container ">
+{% if action=='Add' %}
+<form action="/savefashionproduct"  enctype="multipart/form-data" method="POST">
+{% endif %}
+
+{% if action=='Edit' %}
+<form action="/updatefashionproduct" enctype="multipart/form-data" method="POST">
+  
+  <div class="container col-6 " >
+    <div class="mb-3 ">
+      <label for="fashId" class="form-label">ID</label>
+      <input type="number" class="form-control" name="fashId" id="fashId" value="{{fash.fashId}}" readonly>
+    </div>
+  </div>
+    {% endif %}
+    <div class="container col-6" >
+    <div class="mb-3">
+        <label for="fashName" class="form-label">Name</label>
+        <input type="text" class="form-control" name="fashName" id="fashName" value="{{fash.fashName}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="fashBrand" class="form-label">Brand</label>
+        <input type="text" class="form-control" name="fashBrand" id="fashBrand" value="{{fash.fashBrand}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="fashPrice" class="form-label">Price</label>
+        <input type="number" class="form-control" name="fashPrice" id="fashPrice" value="{{fash.fashPrice}}">
+      </div>
+  
+      <div class="mb-3">
+        <label for="fashGender" class="form-label">Gender</label>
+        <input type="text" class="form-control" name="fashGender" id="fashGender" value="{{fash.fashGender}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="fashSize" class="form-label">Size</label>
+        <input type="text" class="form-control" name="fashSize" id="fashSize" value="{{fash.fashSize}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="fashColor" class="form-label">Color</label>
+        <input type="text" class="form-control" name="fashColor" id="fashColor" value="{{fash.fashColor}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="fashCustomerRatings" class="form-label">Customer Ratings</label>
+        <input type="number" step="any" class="form-control" name="fashCustomerRatings" id="fashCustomerRatings" value="{{fash.fashCustomerRatings}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="fashImage" class="form-label">Image</label>
+        <input type="file" class="form-control" name="fashImage" id="fashImage" value="{{fash.fashImage}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="fashCategory" class="form-label">Category</label>
+        <input type="text" class="form-control" name="fashCategory" id="fashCategory" value="{{fash.fashCategory}}">
+      </div>
+    
+      
+    <button type="submit" class="btn btn-primary d-grid gap-2 mx-auto col-12 ">Submit</button>
+  </div>
+  </form>
+</div>
+</div>
+{% endblock body %}
+

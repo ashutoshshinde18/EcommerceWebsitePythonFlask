@@ -1,0 +1,102 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<h3 class="text-center fs-5 bg-primary mt-1 text-light py-2">Filter your products based on ID,Name,Brand,Price,RAM,Internal Storage,SIM Type,Customer Ratings,Category</h3>
+
+<div class="container bg-info pb-2" >
+
+<div class="container col-3 " >
+<form action="/showmobilesproductbyid" enctype="multipart/form-data" method="POST">
+    <div class="mb-3 px-1 ">
+      <label for="mobId" class="form-label text-dark">Show By ID</label>
+      <input type="number" class="form-control" name="mobId" id="mobId">
+    </div>
+    <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+  </form>
+</div>
+
+
+
+  <div class="container col-3  mt-1" >
+  <form action="/showmobilesproductbyname" enctype="multipart/form-data"  method="POST">
+        <div class="mb-3 px-1">
+          <label for="mobName" class="form-label text-dark">Show By Name</label>
+          <input type="text" class="form-control" name="mobName" id="mobName" >
+        </div>
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3  mt-1" >
+  <form action="/showmobilesproductbybrand" enctype="multipart/form-data"  method="POST">
+        <div class="mb-3 px-1">
+          <label for="mobBrand" class="form-label text-dark">Show By Brand</label>
+          <input type="text" class="form-control" name="mobBrand" id="mobBrand" >
+        </div>
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3 mt-1" >
+  <form action="/showmobilesproductbyprice" enctype="multipart/form-data" method="POST">
+        <div class="mb-3 px-1">
+          <label for="mobPrice" class="form-label text-dark ">Show By Price</label>
+          <input type="number" class="form-control" name="mobPrice" id="mobPrice">
+        </div>  
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3 mt-1" >
+    <form action="/showmobilesproductbyram" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="mobRAM" class="form-label text-dark ">Show By RAM</label>
+            <input type="text" class="form-control" name="mobRAM" id="mobRAM">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  <div class="container col-3 mt-1" >
+    <form action="/showmobilesproductbyinternalstorage" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="mobInternalStorage" class="form-label text-dark ">Show By Internal Storage</label>
+            <input type="text" class="form-control" name="mobInternalStorage" id="mobInternalStorage">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  <div class="container col-3 mt-1" >
+    <form action="/showmobilesproductbysimtype" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="mobSIMType" class="form-label text-dark ">Show By SIM Type</label>
+            <input type="text" class="form-control" name="mobSIMType" id="mobSIMType">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  
+  <div class="container col-3 mt-1" >
+    <form action="/showmobilesproductbycustomerratings" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="mobCustomerRatings" class="form-label text-dark ">Show By Customer Ratings</label>
+            <input type="number" step="any" class="form-control" name="mobCustomerRatings" id="mobCustomerRatings">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+<div class="container col-3 mt-1" >
+    <form action="/showmobilesproductbycategory" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="mobCategory" class="form-label text-dark">Show By Category</label>
+            <input type="text" class="form-control" name="mobCategory" id="mobCategory" >
+          </div>
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+</div>
+{% endblock body %}

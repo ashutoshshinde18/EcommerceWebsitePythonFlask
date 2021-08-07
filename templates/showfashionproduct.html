@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="mt-2">
+<table border="2" class="table ">
+    <thead>
+        <tr class="bg-primary text-white">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Gender</th>
+            <th>Size</th>
+            <th>Color</th>
+            <th>Customer Ratings</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th colspan="2" class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fash in fashlist %}
+            <tr style="background-color: lightyellow;">
+                <td>{{fash.fashId}}</td>
+                <td>{{fash.fashName}}</td>
+                <td>{{fash.fashBrand}}</td>
+                <td><span class="fs-6 fw-bold"><i class="fa fa-rupee"></i>{{fash.fashPrice}}</span></td>
+                <td>{{fash.fashGender}}</td>
+                <td>{{fash.fashSize}}</td>
+                <td>{{fash.fashColor}}</td>
+                <td>{{fash.fashCustomerRatings}}</td>
+                <td><a><img src="static\img\{{fash.fashImage}}" width="100" height="100"></a></td>
+                <td>{{fash.fashCategory}}</td>
+                <td><a onclick="return confirm('Do you want to delete this record?')" href="deletefashionproduct/{{fash.fashId}}" class="btn btn-danger">Delete</a></td>
+                <td><a href="editfashionproduct/{{fash.fashId}}" class="btn btn-warning">Edit</a></td>
+            </tr>
+        
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock body %}

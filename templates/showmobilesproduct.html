@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class=" mt-2">
+<table border="2" class="table">
+    <thead>
+        <tr class="bg-primary text-white">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>RAM</th>
+            <th>Internal Storage</th>
+            <th>SIM Type</th>
+            <th>Customer Ratings</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th colspan="2" class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody> 
+        {% for mob in moblist %}
+            <tr style="background-color: lightyellow;">
+                <td>{{mob.mobId}}</td>
+                <td>{{mob.mobName}}</td>
+                <td>{{mob.mobBrand}}</td>
+                <td><span class="fs-6 fw-bold"><i class="fa fa-rupee"></i>{{mob.mobPrice}}</span></td>
+                <td>{{mob.mobRAM}}</td>
+                <td>{{mob.mobInternalStorage}}</td>
+                <td>{{mob.mobSIMType}}</td>
+                <td>{{mob.mobCustomerRatings}}</td>
+                <td><a><img src="static\img\{{mob.mobImage}}" width="100" height="100"></a></td>
+                <td>{{mob.mobCategory}}</td>
+                <td><a onclick="return confirm('Do you want to delete this record?')" href="deletemobilesproduct/{{mob.mobId}}" class="btn btn-danger">Delete</a></td>
+                <td><a href="editmobilesproduct/{{mob.mobId}}" class="btn btn-warning">Edit</a></td>
+            </tr>
+        
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock body %}

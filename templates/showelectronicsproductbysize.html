@@ -1,0 +1,64 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+
+{% for ele in elelist %}
+
+{% if ele.eleSize == size %}
+<div class="container mt-2">
+    <table border="2" class="table table-warning">
+        <thead>
+            <tr>
+                <td  class="text-center">ID</td>
+                <td>{{ele.eleId}}</td>
+            </tr>
+            <tr>
+                <td  class="text-center">Name</td>
+                <td>{{ele.eleName}}</td>
+            </tr>
+            <tr>
+                <td  class="text-center">Brand</td>
+                <td>{{ele.eleBrand}}</td>
+            </tr>
+            <tr>
+                <td  class="text-center">Price</td>
+                <td><span class="fs-5 fw-bold"><i class="fa fa-rupee"></i>{{ele.elePrice}}</span></td>
+            </tr>
+            <tr>
+                <td  class="text-center">Wired/Wireless</td>
+                <td>{{ele.eleWiredWireless}}</td>
+            </tr>
+            <tr>
+                <td  class="text-center">Size</td>
+                <td>{{ele.eleSize}}</td>
+            </tr>
+            <tr>
+                <td  class="text-center">Color</td>
+                <td>{{ele.eleColor}}</td>
+            </tr>
+            <tr>
+                <td  class="text-center">Customer Ratings</td>
+                <td>{{ele.eleCustomerRatings}}</td>
+            </tr>
+            <tr>
+                <td  class="text-center">Image</td>
+                <td><a><img src="static\img\{{ele.eleImage}}" width="100" height="100"></a></td>
+            </tr>
+            <tr>
+                <td  class="text-center">Category</td>
+                <td>{{ele.eleCategory}}</td>
+            </tr>
+            <tr>
+                <td  class="text-center">Actions</td>
+                <td><a onclick="return confirm('Do you want to delete this record?')" href="deleteelectronicsproduct/{{ele.eleId}}" class="btn btn-danger">Delete</a>
+                &nbsp;<a href="editelectronicsproduct/{{ele.eleId}}" class="btn btn-warning">Edit</a></td>   
+            </tr>
+        </thead>
+</table>
+</div>
+
+{% endif %}
+
+{% endfor %}
+{% endblock body %}

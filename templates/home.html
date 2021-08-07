@@ -1,0 +1,66 @@
+
+{% extends "index.html" %}
+
+{% block body %}
+<div class="fs-4 fw-bold  text-center text-white bg-primary mb-2 mt-2">Login to your account</div>
+<div class="container col-5 bg-primary">
+  
+<form >
+<div class="mb-5 mb-2 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label text-white mt-5">Email</label>
+    <div class="col-sm-10 mt-5">
+      <input type="text"  class="form-control" id="staticEmail" >
+    </div>
+  </div>
+  <div class="mb-5 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label text-white">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control " id="inputPassword">
+    </div>
+  </div>
+
+  <button type="submit" class="text- btn btn-warning d-grid gap-2 col-4 mx-auto">LOGIN</button>
+
+  <a href="#" class="text-white text-decoration-none mb-2" data-bs-toggle="modal" data-bs-target="#forgotpassword">Forgot Password</a>
+</form>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade " id="forgotpassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">FORGOT PASSWORD</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3 row">
+              <label for="staticEmail" class=" col-form-label">Enter your email address</label>
+              <div>
+                <input type="text"  class="form-control" id="staticEmail" >
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputPassword" class=" col-form-label">Create New Password</label>
+              <div>
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputPassword" class=" col-form-label">Confirm New Password</label>
+              <div>
+                <input type="password" class="form-control" id="inputPassword">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="text- btn btn-warning d-grid gap-2 col-4 mx-auto mb-2">CHANGE</button>
+          </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

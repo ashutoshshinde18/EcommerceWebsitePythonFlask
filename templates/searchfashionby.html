@@ -1,0 +1,102 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<h3 class="text-center fs-5 bg-primary mt-1 text-light py-2">Filter your products based on ID,Name,Brand,Price,Gender,Size,Color,Customer Ratings,Category</h3>
+
+<div class="container bg-info pb-2" >
+
+<div class="container col-3 " >
+<form action="/showfashionproductbyid" enctype="multipart/form-data" method="POST">
+    <div class="mb-3 px-1 ">
+      <label for="fashId" class="form-label text-dark">Show By ID</label>
+      <input type="number" class="form-control" name="fashId" id="fashId">
+    </div>
+    <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+  </form>
+</div>
+
+
+
+  <div class="container col-3  mt-1" >
+  <form action="/showfashionproductbyname" enctype="multipart/form-data"  method="POST">
+        <div class="mb-3 px-1">
+          <label for="fashName" class="form-label text-dark">Show By Name</label>
+          <input type="text" class="form-control" name="fashName" id="fashName" >
+        </div>
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3  mt-1" >
+  <form action="/showfashionproductbybrand" enctype="multipart/form-data"  method="POST">
+        <div class="mb-3 px-1">
+          <label for="fashBrand" class="form-label text-dark">Show By Brand</label>
+          <input type="text" class="form-control" name="fashBrand" id="fashBrand" >
+        </div>
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3 mt-1" >
+  <form action="/showfashionproductbyprice" enctype="multipart/form-data" method="POST">
+        <div class="mb-3 px-1">
+          <label for="fashPrice" class="form-label text-dark ">Show By Price</label>
+          <input type="number" class="form-control" name="fashPrice" id="fashPrice">
+        </div>  
+        <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+    </form>
+</div>
+
+<div class="container col-3 mt-1" >
+    <form action="/showfashionproductbygender" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="fashGender" class="form-label text-dark ">Show By Gender</label>
+            <input type="text" class="form-control" name="fashGender" id="fashGender">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  <div class="container col-3 mt-1" >
+    <form action="/showfashionproductbysize" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="fashSize" class="form-label text-dark ">Show By Size</label>
+            <input type="text" class="form-control" name="fashSize" id="fashSize">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  <div class="container col-3 mt-1" >
+    <form action="/showfashionproductbycolor" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="fashColor" class="form-label text-dark ">Show By Color</label>
+            <input type="text" class="form-control" name="fashColor" id="fashColor">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+  
+  <div class="container col-3 mt-1" >
+    <form action="/showfashionproductbycustomerratings" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="fashCustomerRatings" class="form-label text-dark ">Show By Customer Ratings</label>
+            <input type="number" step="any" class="form-control" name="fashCustomerRatings" id="fashCustomerRatings">
+          </div>  
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+
+<div class="container col-3 mt-1" >
+    <form action="/showfashionproductbycategory" enctype="multipart/form-data" method="POST">
+          <div class="mb-3 px-1">
+            <label for="fashCategory" class="form-label text-dark">Show By Category</label>
+            <input type="text" class="form-control" name="fashCategory" id="fashCategory" >
+          </div>
+          <button type="submit" class="btn btn-primary d-grid gap-2 col-4 mx-auto">Search</button>
+      </form>
+  </div>
+</div>
+{% endblock body %}

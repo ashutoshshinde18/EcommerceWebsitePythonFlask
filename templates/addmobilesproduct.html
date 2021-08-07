@@ -1,0 +1,74 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="container mt-2 bg-info pb-2">
+  <div class="container ">
+{% if action=='Add' %}
+<form action="/savemobilesproduct"  enctype="multipart/form-data" method="POST">
+{% endif %}
+
+{% if action=='Edit' %}
+<form action="/updatemobilesproduct" enctype="multipart/form-data" method="POST">
+  
+  <div class="container col-6 " >
+    <div class="mb-3 ">
+      <label for="mobId" class="form-label">ID</label>
+      <input type="number" class="form-control" name="mobId" id="mobId" value="{{mob.mobId}}" readonly>
+    </div>
+  </div>
+    {% endif %}
+    <div class="container col-6" >
+    <div class="mb-3">
+        <label for="mobName" class="form-label">Name</label>
+        <input type="text" class="form-control" name="mobName" id="mobName" value="{{mob.mobName}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="mobBrand" class="form-label">Brand</label>
+        <input type="text" class="form-control" name="mobBrand" id="mobBrand" value="{{mob.mobBrand}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="mobPrice" class="form-label">Price</label>
+        <input type="number" step="any" class="form-control" name="mobPrice" id="mobPrice" value="{{mob.mobPrice}}">
+      </div> 
+  
+      <div class="mb-3">
+        <label for="mobRAM" class="form-label">RAM</label>
+        <input type="text" class="form-control" name="mobRAM" id="mobRAM" value="{{mob.mobRAM}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="mobInternalStorage" class="form-label">Internal Storage</label>
+        <input type="text" class="form-control" name="mobInternalStorage" id="mobInternalStorage" value="{{mob.mobInternalStorage}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="mobSIMType" class="form-label">SIM Type</label>
+        <input type="text" class="form-control" name="mobSIMType" id="mobSIMType" value="{{mob.mobSIMType}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="mobCustomerRatings" class="form-label">Customer Ratings</label>
+        <input type="number"  step="any" class="form-control" name="mobCustomerRatings" id="mobCustomerRatings" value="{{mob.mobCustomerRatings}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="mobImage" class="form-label">Image</label>
+        <input type="file" class="form-control" name="mobImage" id="mobImage" value="{{mob.mobImage}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="mobCategory" class="form-label">Category</label>
+        <input type="text" class="form-control" name="mobCategory" id="mobCategory" value="{{mob.mobCategory}}">
+      </div>
+    
+      
+    <button type="submit" class="btn btn-primary d-grid gap-2 mx-auto col-12 ">Submit</button>
+  </div>
+  </form>
+</div>
+</div>
+{% endblock body %}
+

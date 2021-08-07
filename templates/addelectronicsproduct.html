@@ -1,0 +1,74 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="container mt-2 bg-info pb-2">
+  <div class="container ">
+{% if action=='Add' %}
+<form action="/saveelectronicsproduct"  enctype="multipart/form-data" method="POST">
+{% endif %}
+
+{% if action=='Edit' %}
+<form action="/updateelectronicsproduct" enctype="multipart/form-data" method="POST">
+  
+  <div class="container col-6 " >
+    <div class="mb-3 ">
+      <label for="eleId" class="form-label">ID</label>
+      <input type="number" class="form-control" name="eleId" id="eleId" value="{{ele.eleId}}" readonly>
+    </div>
+  </div>
+    {% endif %}
+    <div class="container col-6" >
+    <div class="mb-3">
+        <label for="eleName" class="form-label">Name</label>
+        <input type="text" class="form-control" name="eleName" id="eleName" value="{{ele.eleName}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="eleBrand" class="form-label">Brand</label>
+        <input type="text" class="form-control" name="eleBrand" id="eleBrand" value="{{ele.eleBrand}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="elePrice" class="form-label">Price</label>
+        <input type="number" step="any" class="form-control" name="elePrice" id="elePrice" value="{{ele.elePrice}}">
+      </div>
+  
+      <div class="mb-3">
+        <label for="eleWiredWireless" class="form-label">Wired/Wireless </label>
+        <input type="text" class="form-control" name="eleWiredWireless" id="eleWiredWireless" value="{{ele.eleWiredWireless}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="eleSize" class="form-label">Size</label>
+        <input type="text" class="form-control" name="eleSize" id="eleSize" value="{{ele.eleSize}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="eleColor" class="form-label">Color</label>
+        <input type="text" class="form-control" name="eleColor" id="eleColor" value="{{ele.eleColor}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="eleCustomerRatings" class="form-label">Customer Ratings</label>
+        <input type="number" step="any" class="form-control" name="eleCustomerRatings" id="eleCustomerRatings" value="{{ele.eleCustomerRatings}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="eleImage" class="form-label">Image</label>
+        <input type="file" class="form-control" name="eleImage" id="eleImage" value="{{ele.eleImage}}">
+      </div>
+
+      <div class="mb-3">
+        <label for="eleCategory" class="form-label">Category</label>
+        <input type="text" class="form-control" name="eleCategory" id="eleCategory" value="{{ele.eleCategory}}">
+      </div>
+    
+      
+    <button type="submit" class="btn btn-primary d-grid gap-2 mx-auto col-12 ">Submit</button>
+  </div>
+  </form>
+</div>
+</div>
+{% endblock body %}
+
